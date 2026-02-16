@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKATE ELITE - Skateboards Premium & Design</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Premium -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-fire"></i> SKATE ELITE
+            </div>
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#produits">Collection</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="cart-link">
+                    <a href="#" id="cart-toggle">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span id="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION - Video Background Style -->
+    <section id="accueil" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="word">RIDE</span>
+                    <span class="word">THE</span>
+                    <span class="word">FUTURE</span>
+                </h1>
+                <p class="hero-subtitle">Découvrez la collection exclusive de skateboards premium. Conçus pour les riders qui repoussent les limites.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="document.querySelector('#produits').scrollIntoView({behavior: 'smooth'})">
+                        Voir la Collection <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button class="btn btn-secondary" onclick="document.querySelector('#about').scrollIntoView({behavior: 'smooth'})">
+                        En Savoir Plus
+                    </button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-card">
+                    <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=600&h=600&fit=crop" alt="Skateboard Premium" class="hero-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COLLECTION PRODUITS -->
+    <section id="produits" class="products-section">
+        <div class="section-header">
+            <h2 class="section-title">Nos Collections Exclusives</h2>
+            <p class="section-subtitle">Chaque skateboard est une œuvre d'art. Durabilité, style et performance.</p>
+        </div>
+
+        <div class="filters">
+            <button class="filter-btn active" onclick="filterProducts('all')">Tous</button>
+            <button class="filter-btn" onclick="filterProducts('street')">Street</button>
+            <button class="filter-btn" onclick="filterProducts('freestyle')">Freestyle</button>
+            <button class="filter-btn" onclick="filterProducts('downhill')">Downhill</button>
+        </div>
+
+        <div class="products-grid" id="products-grid">
+            <!-- Les produits seront insérés ici -->
+        </div>
+    </section>
+
+    <!-- À PROPOS -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b3f4?w=500&h=500&fit=crop" alt="Skate Culture" class="about-img">
+            </div>
+            <div class="about-content">
+                <h2>Pourquoi SKATE ELITE ?</h2>
+                <p>Depuis 2010, nous sélectionnons les meilleurs skateboards du monde. Chaque produit est testé par nos riders professionnels pour garantir la qualité maximale.</p>
+                
+                <div class="features">
+                    <div class="feature-item">
+                        <i class="fas fa-star"></i>
+                        <h4>Qualité Premium</h4>
+                        <p>Matériaux haut de gamme sélectionnés</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-truck"></i>
+                        <h4>Livraison Rapide</h4>
+                        <p>24-48h en France métropolitaine</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Garantie 2 Ans</h4>
+                        <p>Protection complète sur tous les articles</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PANIER FLOTTANT -->
+    <div id="cart-panel" class="cart-panel">
+        <div class="cart-header">
+            <h3>Votre Panier</h3>
+            <button class="close-btn" id="close-cart">✕</button>
+        </div>
+        <div id="cart-items" class="cart-items-container">
+            <p class="empty-cart">Votre panier est vide</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                Total: <span id="cart-total">0.00</span> €
+            </div>
+            <button class="btn btn-primary full-width" id="checkout-btn">Passer la Commande</button>
+        </div>
+    </div>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section">
+        <div class="section-header">
+            <h2 class="section-title">Nous Contacter</h2>
+            <p class="section-subtitle">Besoin d'aide ? On est là pour vous !</p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-info-card">
+                <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>Adresse</h3>
+                <p>156 Avenue des Champs de Mars</p>
+                <p>75015 Paris, France</p>
+            </div>
+
+            <div class="contact-info-card">
+                <div class="contact-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <h3>Téléphone</h3>
+                <p>+33 (0)1 45 67 89 12</p>
+                <p>Lun-Ven: 9h-19h</p>
+            </div>
+
+            <div class="contact-info-card">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>Email</h3>
+                <p>support@skatepro.fr</p>
+                <p>Réponse en moins de 2h</p>
+            </div>
+        </div>
+
+        <form class="contact-form" id="contact-form">
+            <div class="form-group">
+                <input type="text" placeholder="Votre nom complet" required>
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Votre email" required>
+            </div>
+            <div class="form-group">
+                <textarea placeholder="Votre message..." rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Envoyer le Message</button>
+        </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>SKATE ELITE</h4>
+                <p>La référence du skateboard premium depuis 2010</p>
+            </div>
+            <div class="footer-section">
+                <h4>Liens Rapides</h4>
+                <ul>
+                    <li><a href="#produits">Collection</a></li>
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Suivez-nous</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 SKATE ELITE. Tous droits réservés. | Livraison gratuite à partir de 80€</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
